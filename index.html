@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smartrank • Rekomendasi Jurusan dari Nilai Rapor</title>
+  <meta name="description" content="Rekomendasi jurusan kuliah berdasarkan nilai rapor semester 1–5.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header class="top">
+      <div>
+        <h1>Smartrank • Rekomendasi Jurusan dari Nilai Rapor</h1>
+        <p class="sub">Masukkan nilai rapor Semester 1–5. Sistem menghitung skor klaster otomatis dan merekomendasikan program studi (SNBP).</p>
+      </div>
+      <div class="header-actions">
+        <button id="btnSave" class="btn">Simpan</button>
+        <button id="btnLoad" class="btn">Muat</button>
+        <button id="btnReset" class="btn">Reset</button>
+        <button id="btnRun" class="btn primary">Hitung & Rekomendasikan</button>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- INPUT -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>📘 Input Nilai Rapor (S1–S5)</h2>
+          <div class="small-hint">Rentang 0–100. Kosongkan bila tidak ada. Kategori mapel tidak bisa diubah (paten).</div>
+        </div>
+
+        <div class="controls">
+          <div class="left-controls">
+            <button id="btnFill" class="btn">Contoh Isi Otomatis</button>
+            <button id="btnAddRow" class="btn">+ Tambah Mapel Kustom</button>
+          </div>
+
+          <div class="right-controls">
+            <label class="upload-label btn">Upload (.xls/.xlsx)
+              <input id="fileUpload" type="file" accept=".xls,.xlsx" class="vis-hidden" />
+            </label>
+
+            <!-- DIGANTI: dari Unduh JSON → Unduh Template XLSX -->
+            <button id="btnDownloadTemplate" class="btn">Unduh Template (.xlsx)</button>
+          </div>
+        </div>
+
+        <div class="tblwrap" id="tableWrap">
+          <table id="tbl" class="tbl">
+            <thead>
+              <tr>
+                <th style="min-width:200px">Mata Pelajaran</th>
+                <th>Kategori</th>
+                <th title="Semester 1">S1</th>
+                <th title="Semester 2">S2</th>
+                <th title="Semester 3">S3</th>
+                <th title="Semester 4">S4</th>
+                <th title="Semester 5">S5</th>
+                <th>Rerata</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+
+        <div class="panel-foot hint">
+          <span>
+            Template upload XLS: kolom = 
+            <code>Nama Mapel</code>, 
+            <code>Kategori</code>, 
+            <code>S1</code>, 
+            <code>S2</code>, 
+            <code>S3</code>, 
+            <code>S4</code>, 
+            <code>S5</code>.  
+            Kategori harus berada di (IPA, IPS, BAHASA, SENI, TEKNOLOGI, KESEHATAN, UMUM).
+          </span>
+        </div>
+      </section>
+
+      <!-- KPI -->
+      <section class="panel">
+        <h2>📊 Ringkasan Skor Klaster</h2>
+        <div id="kpiGrid" class="kpi-grid"></div>
+      </section>
+
+      <!-- RECOMMENDATIONS -->
+      <section class="panel">
+        <h2>🎯 Rekomendasi Program Studi (Top 20)</h2>
+        <div id="recList" class="rec-list"></div>
+
+        <section class="grafik-section">
+          <h3>Visualisasi Skor Klaster</h3>
+          <canvas id="clusterChart" style="max-width:640px; width:100%; height:320px;"></canvas>
+        </section>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div>
+        <p><strong>Catatan singkat:</strong></p>
+        <ul>
+          <li>Kategori mapel <b>paten</b> (tidak dapat diubah) untuk menjaga konsistensi klaster.</li>
+          <li><b>Umum</b> = mapel dasar (Agama, PPKn, Sejarah, PJOK, dll).</li>
+          <li>Jika tidak ditemukan mapel kategori <b>KESEHATAN</b>, skor KESEHATAN dihitung dari rata-rata kategori <b>IPA</b>.</li>
+          <li>Upload file menggunakan format <b>.xls/.xlsx</b>.</li>
+        </ul>
+        <div class="muted">© 2025 Smartrank — Client-side only • Untuk latihan & edukasi.</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.10/dist/xlsx.full.min.js"></script>
+
+  <!-- app -->
+  <script src="script.js"></script>
+</body>
+</html>    <!-- FOOTER -->
+
+
+  </div>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.10/dist/xlsx.full.min.js"></script>
+
+  <!-- app -->
+  <script src="script.js"></script>
+</body>
+</html>
+  </div>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.10/dist/xlsx.full.min.js"></script>
+
+  <!-- app -->
+  <script src="script.js"></script>
+</body>
+</html>
