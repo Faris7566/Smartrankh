@@ -39,15 +39,7 @@
             <button id="btnFill" class="btn">Contoh Isi Otomatis</button>
             <button id="btnAddRow" class="btn">+ Tambah Mapel Kustom</button>
           </div>
-
-          <div class="right-controls">
-            <label class="upload-label btn">Upload (.xls/.xlsx)
-              <input id="fileUpload" type="file" accept=".xls,.xlsx" class="vis-hidden" />
-            </label>
-
-            <!-- DIGANTI: dari Unduh JSON → Unduh Template XLSX -->
-            <button id="btnDownloadTemplate" class="btn">Unduh Template (.xlsx)</button>
-          </div>
+          <!-- RIGHT controls dihapus -->
         </div>
 
         <div class="tblwrap" id="tableWrap">
@@ -69,19 +61,6 @@
           </table>
         </div>
 
-        <div class="panel-foot hint">
-          <span>
-            Template upload XLS: kolom = 
-            <code>Nama Mapel</code>, 
-            <code>Kategori</code>, 
-            <code>S1</code>, 
-            <code>S2</code>, 
-            <code>S3</code>, 
-            <code>S4</code>, 
-            <code>S5</code>.  
-            Kategori harus berada di (IPA, IPS, BAHASA, SENI, TEKNOLOGI, KESEHATAN, UMUM).
-          </span>
-        </div>
       </section>
 
       <!-- KPI -->
@@ -104,6 +83,27 @@
     </main>
 
     <!-- FOOTER -->
+    <footer class="foot">
+      <div>
+        <p><strong>Catatan singkat:</strong></p>
+        <ul>
+          <li>Kategori mapel <b>paten</b> (tidak dapat diubah) untuk menjaga konsistensi klaster.</li>
+          <li><b>Umum</b> = mapel dasar (Agama, PPKn, Sejarah, PJOK, dll).</li>
+          <li>Jika tidak ditemukan mapel kategori <b>KESEHATAN</b>, skor KESEHATAN dihitung dari rata-rata kategori <b>IPA</b>.</li>
+        </ul>
+        <div class="muted">© 2025 Smartrank — Client-side only • Untuk latihan & edukasi.</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- app -->
+  <script src="script.js"></script>
+</body>
+</html>    <!-- FOOTER -->
     <footer class="foot">
       <div>
         <p><strong>Catatan singkat:</strong></p>
